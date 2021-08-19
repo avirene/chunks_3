@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> word:</strong>
+  <%= @entry. word %>
+</p>
+
+<p>
+  <strong>Pronunciation:</strong>
+  <%= @entry.pronunciation %>
+</p>
+
+<p>
+  <strong>Definition:</strong>
+  <%= @entry.definition %>
+</p>
+
+<p>
+  <strong>Example:</strong>
+  <%= @entry.example %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @entry.image_url %>
+</p>
+
+<p>
+  <strong>Sound url:</strong>
+  <%= @entry.sound_url %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

@@ -1,0 +1,47 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label : word %>
+    <%= form.text_field : word %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pronunciation %>
+    <%= form.text_field :pronunciation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :definition %>
+    <%= form.text_area :definition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :example %>
+    <%= form.text_area :example %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_area :image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sound_url %>
+    <%= form.text_area :sound_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
