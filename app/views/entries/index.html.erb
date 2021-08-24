@@ -1,32 +1,35 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
 
 <h1>Entries</h1>
 
 <table>
-  <thead>
+  <tfoot>
     <tr>
-      <th>Word</th>
-      <th>Pronunciation</th>
-      <th>Definition</th>
-      <th>Example</th>
-      <th>Image url</th>
-      <th>Sound url</th>
-      <th colspan="3"></th>
+      <td colspan="3">
+        <%= link_to 'New Entry', new_entry_path %>
+      </td>
     </tr>
-  </thead>
-
+  </tfoot>
   <tbody>
     <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry. word %></td>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td class="word">
+          <h1><%= entry.word %></h1>
+        </td>
         <td><%= entry.pronunciation %></td>
         <td><%= entry.definition %></td>
         <td><%= entry.example %></td>
         <td><%= entry.image_url %></td>
         <td><%= entry.sound_url %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="actions>
+          <ul>
+            <li><%= link_to 'Show', entry %></li>
+            <li><%= link_to 'Edit', edit_entry_path(entry) %></li>
+            <li><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </td>
       </tr>
     <% end %>
   </tbody>
