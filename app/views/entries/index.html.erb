@@ -18,12 +18,19 @@
         <td class="word">
           <h1><%= entry.word %></h1>
         </td>
-        <td><%= entry.pronunciation %></td>
-        <td><%= entry.definition %></td>
-        <td><%= entry.example %></td>
-        <td><%= entry.image_url %></td>
-        <td><%= entry.sound_url %></td>
-        <td class="actions>
+        <td class="pronunciation">
+          <%= entry.pronunciation %>
+        </td>
+        <td class="definition">
+          <%= entry.definition %>
+        </td>
+        <td class="example">
+          <%= entry.example %>
+        </td>
+        <td class="image">
+          <%= image_tag(entry.image_url, class: 'list_image') %>
+        </td>
+        <td class="actions">
           <ul>
             <li><%= link_to 'Show', entry %></li>
             <li><%= link_to 'Edit', edit_entry_path(entry) %></li>
@@ -36,5 +43,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Entry', new_entry_path %>
