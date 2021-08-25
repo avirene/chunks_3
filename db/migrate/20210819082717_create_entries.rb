@@ -6,8 +6,7 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.text :definition
       t.text :example
       t.text :image_url
-      t.text :sound_url
-
+      
       t.timestamps
     end
   end
