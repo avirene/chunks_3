@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2021_08_19_082717) do
     t.text "definition"
     t.text "example"
     t.text "image_url"
-    t.text "sound_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
